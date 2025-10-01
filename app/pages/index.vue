@@ -32,11 +32,7 @@ const { paginated, page, totalPages } = storeToRefs(mainStore);
     </div>
   </div>
 
-  <div class="pagination">
-    <button :disabled="page <= 1" @click="page--">Назад</button>
-    <span>{{ page }} / {{ totalPages }}</span>
-    <button :disabled="page >= totalPages" @click="page++">Вперед</button>
-  </div>
+  <Pagination v-model:page="page" :total-pages="totalPages" />
 </template>
 
 <style scoped lang="scss">
