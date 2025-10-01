@@ -7,9 +7,9 @@
 </script>
 
 <template>
-  <div class="block">
+  <div class="home-page">
+    <Header />
     <h2 class="title">home page</h2>
-    <router-link to="/news">news</router-link>
   </div>
 </template>
 

@@ -1,14 +1,10 @@
 <script setup lang="ts">
-// import { ref } from 'vue'
-
-// interface Props {
-
-// }
+import update from "~/assets/icons/update.png";
 </script>
 
 <template>
   <div class="block">
-    <h2 class="title">News page</h2>
+    <img :src="update" alt="" />
   </div>
 </template>
 
