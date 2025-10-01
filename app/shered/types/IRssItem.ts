@@ -3,4 +3,5 @@ export interface IRssItem {
   link: string;
   description: string;
   pubDate: string;
+  source?: string;
 }

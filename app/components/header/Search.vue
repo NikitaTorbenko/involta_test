@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import SearchIcon from "~/assets/icons/search.svg";
-// import { ref } from 'vue'
 
-// interface Props {
-
-// }
+const store = useMainStore();
+const { search } = storeToRefs(store);
 </script>
 
 <template>
   <div class="search">
-    <input class="search-input" type="text" />
+    <input
+      v-model="search"
+      type="text"
+      placeholder="Поиск новостей..."
+      class="search-input"
+    />
     <div class="search-icon">
       <img :src="SearchIcon" alt="" />
     </div>

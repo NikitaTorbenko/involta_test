@@ -1,7 +1,7 @@
 import { XMLParser } from "fast-xml-parser";
 import type { IRssItem } from "~/shered/types";
 
-export function useRssFeed(url: string) {
+export function useRssFeed(url: string, source: string) {
   return useFetch(url, {
     transform: (xml: string): IRssItem[] => {
       const parser = new XMLParser({ ignoreAttributes: false });
@@ -13,6 +13,7 @@ export function useRssFeed(url: string) {
         link: i.link,
         description: i.description,
         pubDate: i.pubDate,
+        source,
       }));
     },
   });

@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { navList } from "./model";
 
-const activeItem = ref(0);
+const store = useMainStore();
+
+const { activeItem } = storeToRefs(store);
 </script>
 
 <template>
   <div class="nav-wrap">
     <nav class="nav">
       <div
-        v-for="(item, index) in navList"
+        v-for="item in navList"
         :key="item.query"
-        @click="() => (activeItem = index)"
         class="nav-item"
-        :class="activeItem === index ? ' nav-item-active' : ''"
+        :class="{ 'nav-item-active': activeItem === item.query }"
+        @click="store.setFilter(item.query)"
       >
         {{ item.title }}
       </div>
@@ -36,6 +37,7 @@ const activeItem = ref(0);
 }
 
 .nav-item {
+  cursor: pointer;
   font-weight: 700;
   color: var(--blue);
   transition: 0.2s;

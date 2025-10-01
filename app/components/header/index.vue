@@ -1,10 +1,4 @@
-<script setup lang="ts">
-// import { ref } from 'vue'
-
-// interface Props {
-
-// }
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header class="header">
