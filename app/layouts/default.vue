@@ -7,13 +7,23 @@
 </script>
 
 <template>
-  <div class="block">
-    <h2 class="title">default layout</h2>
-    <slot />
+  <div class="layout">
+    <div class="container">
+      <slot />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-// .block {
-// }
+.layout {
+  background-color: #fbfbfb;
+  min-height: 100dvh;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 </style>
