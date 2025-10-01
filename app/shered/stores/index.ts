@@ -1,0 +1,1 @@
+export { useFormatNews } from "./formatNews";
